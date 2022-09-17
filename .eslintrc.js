@@ -15,7 +15,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.js', 'package.json', 'package-lock.json', 'yarn.lock', 'ormconfig.json', 'test-report.xml'],
+  ignorePatterns: ['.eslintrc.js', 'package.json', 'package-lock.json', 'yarn.lock', 'ormconfig.json', 'Dockerfile', 'test-report.xml'],
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
