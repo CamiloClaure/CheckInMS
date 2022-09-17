@@ -1,0 +1,17 @@
+{
+  "type": "postgres",
+  "username": "postgres",
+  "password": "postgres",
+  "database": "postgres",
+  "synchronize": true,
+  "logging": false,
+	"host": "localhost",
+  "port": 8085,
+  "entities": ["dist/Infrastructure/ORM/Entities/**/*.js"],
+  "migrations": [
+    "src/migration/**/*.ts"
+  ],
+  "subscribers": [
+    "src/subscriber/**/*.ts"
+  ]
+}
