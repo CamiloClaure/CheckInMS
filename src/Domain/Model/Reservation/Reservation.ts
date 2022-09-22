@@ -6,6 +6,7 @@ import { CheckInPassed } from '../../Event/CheckInPassed';
 
 export class Reservation extends AggregateRoot<string> {
 	private _nroReserva!: string;
+	private _pasajeroDoc!: string;
 	private _idVuelo!: string;
 	private _activo!: boolean;
 
@@ -24,6 +25,13 @@ export class Reservation extends AggregateRoot<string> {
 
 	set nroReserva(value: string) {
 		this._nroReserva = value;
+	}
+	get pasajero(): string {
+		return this._pasajeroDoc;
+	}
+
+	set pasajero(value: string) {
+		this._pasajeroDoc = value;
 	}
 	get idVuelo(): string {
 		return this._idVuelo;

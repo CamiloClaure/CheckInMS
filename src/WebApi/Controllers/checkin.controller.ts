@@ -20,7 +20,6 @@ export class CheckinController {
 	@OnEvent('order.created')
 	async handleReservationCreated(message) {
 		// this.getFlight(message)
-		console.log(message);
 		console.log(await this.getFlight(message));
 	}
 

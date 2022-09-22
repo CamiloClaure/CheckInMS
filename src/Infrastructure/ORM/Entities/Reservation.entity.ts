@@ -18,5 +18,8 @@ export class Reservation {
 		idVuelo: string;
 
 	@Column({ nullable: true })
+		docPasajero: string;
+
+	@Column({ nullable: true })
 		activo: boolean;
 }

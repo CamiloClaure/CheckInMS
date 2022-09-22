@@ -23,15 +23,19 @@ export class ReservationService implements IReservationService {
 	async createReservation(reserveDto: ReserveDto): Promise<string> {
 		// buscar el boleto y que sea el mismo usuario
 		// if true then guardar else retornar error
-		const checkInModel = new ReservationBuilder(reserveDto.id)
-			.setActivo(reserveDto.activo)
-			.setReservationNroReserva(reserveDto.nroReserva)
-			.setIdVuelo(reserveDto.idVuelo)
-			.build();
-		console.log('===================================');
-		console.log(checkInModel, reserveDto);
-		console.log('===================================');
-		// checkInModel.consolidateCheckIn();
-		return this.reservationRepository.createReservation(checkInModel);
+		reserveDto.vueloReserva.forEach(value => {
+			const reservationModel = new ReservationBuilder(reserveDto.id)
+				.setActivo(reserveDto.activo)
+				.setReservationNroReserva(reserveDto.nroReserva)
+				.setIdVuelo(reserveDto.idVuelo)
+				.setPasajero(value.nroDocumento)
+				.build();
+			return this.reservationRepository.createReservation(reservationModel);
+		})
+		return "created";
+	}
+
+	async getReservation(reservationId: string){
+		return await this.reservationRepository.FindByIdAsync(reservationId)
 	}
 }

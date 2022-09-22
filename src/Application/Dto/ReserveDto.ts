@@ -8,7 +8,7 @@ export class ReserveDto {
 	vueloReserva: Array<	{
 		id: string;
 		pasajero: string;
-		nroDocumento: number;
+		nroDocumento: string;
 		costo: number;
 	}> = null;
 	occuredOn: Date = null;

@@ -13,7 +13,6 @@ async function rabbitMQStuff(): Promise<void> {
 			const input = JSON.parse(message.content.toString())
 			// console.log(message.content.toString());
 			channel.ack(message)
-			console.log(input);
 		})
 	}
 	catch (e){

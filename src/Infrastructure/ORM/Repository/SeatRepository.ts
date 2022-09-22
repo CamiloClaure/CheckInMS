@@ -8,7 +8,6 @@ export class SeatRepository implements ISeatRepository {
 	constructor(private dataSource: DataSource) {
 	}
 	CreateAsync(obj: any): Promise<any> {
-		console.log(obj);
 		return Promise.resolve(undefined);
 	}
 
@@ -25,7 +24,6 @@ export class SeatRepository implements ISeatRepository {
 	}
 
 	createSeat(seat: Seat): Promise<any> {
-		console.log(seat);
 		return Promise.resolve(undefined);
 	}
 
@@ -35,7 +33,6 @@ export class SeatRepository implements ISeatRepository {
 	}
 
 	removeSeat(seat: Seat): Promise<any> {
-		console.log(seat);
 		return Promise.resolve(undefined);
 	}
 }

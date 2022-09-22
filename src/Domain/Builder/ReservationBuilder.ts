@@ -3,7 +3,6 @@ export class ReservationBuilder {
 	private readonly _reservation: Reservation;
 
 	constructor(id?: string) {
-		console.log("id reservation", id);
 		this._reservation = id ? new Reservation(id) : new Reservation();
 	}
 
@@ -19,6 +18,10 @@ export class ReservationBuilder {
 
 	setActivo(activo: boolean) {
 		this._reservation.activo = activo;
+		return this;
+	}
+	setPasajero(documento: string) {
+		this._reservation.pasajero = documento;
 		return this;
 	}
 

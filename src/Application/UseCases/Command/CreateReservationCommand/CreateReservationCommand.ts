@@ -16,7 +16,6 @@ export class CreateReservationCommand implements ICommand {
 	}
 
 	public execute = async () => {
-		console.log('creating command');
 
 		const commandName = 'CreateReservationHandler';
 
