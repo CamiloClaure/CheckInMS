@@ -7,7 +7,7 @@ export class DateValue extends ValueObject {
 		super();
 		// TODO add rule validation
 
-		this.date = date;
+		this.date = new Date(date);
 	}
 
 	getDate(value: DateValue): Date {

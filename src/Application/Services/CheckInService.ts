@@ -5,15 +5,18 @@ import { CheckInBuilder } from '../../Domain/Builder/CheckInBuilder';
 import { SeatService } from './SeatService';
 import { CheckInRepository } from '../../Infrastructure/ORM/Repository/CheckInRepository';
 import * as amqplib from 'amqplib';
+import { RabbitMQService } from "./BrokerService";
 
 @Injectable()
 export class CheckInService implements ICheckInService {
 	checkInRepository: CheckInRepository;
 	seatService: SeatService;
+	rabbitMQService: RabbitMQService;
 
-	constructor(checkInRepository: CheckInRepository, seatService: SeatService) {
+	constructor(checkInRepository: CheckInRepository, seatService: SeatService, rabbitMQService: RabbitMQService) {
 		this.checkInRepository = checkInRepository;
 		this.seatService = seatService;
+		this.rabbitMQService = rabbitMQService
 	}
 
 	async createCheckIn(checkIn: CheckInDto): Promise<string> {
@@ -23,23 +26,13 @@ export class CheckInService implements ICheckInService {
 			.setCheckInDate(checkIn.checkInDate)
 			.setBaggage(checkIn.baggage)
 			.build();
-		console.log(checkInModel);
 		checkInModel.consolidateCheckIn();
+		const { id, baggage, seat } = checkInModel
+		console.log({ id, baggage, seat });
+		await this.rabbitMQService.sendRabbitMQ({
+			id: checkInModel.id, baggage: checkInModel.baggage, OccurredOn: new Date(), eventId: "event"
+		});
 		return this.checkInRepository.createCheckIn(checkInModel);
 	}
 
-	async rabbitMQStuff(): Promise<void> {
-		try {
-			const connection = await amqplib.connect('amqp://localhost:5672');
-			const channel = await connection.createChannel();
-			const result = await channel.assertQueue("jobs");
-			channel.consume("jobs", message => {
-				const input = JSON.parse(message.content.toString())
-				console.log(`Received ${input}`);
-			})
-		}
-		catch (e){
-			console.error(e)
-		}
-	}
 }

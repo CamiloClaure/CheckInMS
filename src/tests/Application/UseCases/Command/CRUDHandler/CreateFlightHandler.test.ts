@@ -1,5 +1,5 @@
 import { CheckInDto } from '../../../../../Application/Dto/CheckInDto';
-import { CRUDCommandFactory } from '../../../../../Application/UseCases/Command/CRUDCommandHandler/CRUDCheckInFactory';
+import { CRUDCommandFactory } from '../../../../../Application/UseCases/Command/CRUDCommandHandler/CRUDCommandFactory';
 import { CreateCheckInHandler } from '../../../../../Application/UseCases/Command/CRUDCommandHandler/CreateCheckInHandler';
 import { CheckInService } from '../../../../../Application/Services/CheckInService';
 import { createMock } from 'ts-auto-mock';
@@ -20,7 +20,7 @@ checkInService.createCheckIn = (param) => {
 	return Promise.resolve('11');
 };
 
-const crudCommandFactory = new CRUDCommandFactory(checkInService);
+const crudCommandFactory = new CRUDCommandFactory();
 
 describe('Creates a checkIn', () => {
 	test('Should be a createFlightHandler', () => {

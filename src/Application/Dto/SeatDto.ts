@@ -1,5 +1,5 @@
 export class SeatDto {
-	id: string;
-	code: string;
-	type: number;
+	id: string = null;
+	code: string = null;
+	type: number = null;
 }

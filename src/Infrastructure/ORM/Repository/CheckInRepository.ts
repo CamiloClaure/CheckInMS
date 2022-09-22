@@ -1,12 +1,14 @@
 import { ICheckInRepository } from '../../../Domain/Repositories/ICheckInRepository';
 import { CheckIn as CheckInDomain } from '../../../Domain/Model/CheckIn/CheckIn';
 import { CheckIn } from '../Entities/CheckIn.entity';
-import { getManager } from 'typeorm';
+import { DataSource, getManager } from "typeorm";
 import { Seat } from '../Entities/Seat.entity';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class CheckInRepository implements ICheckInRepository {
+	constructor(private dataSource: DataSource) {
+	}
 	CreateAsync(obj: any): Promise<any> {
 		console.log(obj);
 		return Promise.resolve(undefined);
@@ -22,13 +24,12 @@ export class CheckInRepository implements ICheckInRepository {
 		const checkIn = new CheckIn();
 		checkIn.id = checkInDomain.id;
 		checkIn.seat = new Seat("test").id;
-		checkIn.departureDate = checkInDomain.checkInDate.date;
+		checkIn.departureDate = new Date();
 		checkIn.baggage = checkInDomain.baggage;
-		const status = getManager()
+		const status = this.dataSource
 			.getRepository('CheckIn')
 			.save(checkIn)
 			.then((checkInRes) => {
-				console.log("repository succed");
 				return checkInRes.id;
 			})
 			.catch((err) => {

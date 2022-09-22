@@ -1,5 +1,5 @@
 import { CheckInDto } from '../../../../../Application/Dto/CheckInDto';
-import { CreateCheckInCommandFactory } from '../../../../../Application/UseCases/Command/CreateCheckInCommand/CreateCheckInCommandFactory';
+import { CreateCommandFactory } from '../../../../../Application/UseCases/Command/CreateCheckInCommand/CreateCommandFactory';
 import { CreateCheckInCommand } from '../../../../../Application/UseCases/Command/CreateCheckInCommand/CreateCheckInCommand';
 import { createMock } from 'ts-auto-mock';
 import { CheckInService } from '../../../../../Application/Services/CheckInService';
@@ -18,7 +18,7 @@ checkInService.createCheckIn = (param) => {
 	return Promise.resolve('11');
 };
 
-const createFlightCommandFactory = new CreateCheckInCommandFactory(checkInService);
+const createFlightCommandFactory = new CreateCommandFactory(checkInService);
 
 describe('Creates a checkIn', () => {
 	test('Should be a createFlightCommand', () => {
