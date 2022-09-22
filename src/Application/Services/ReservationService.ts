@@ -24,7 +24,7 @@ export class ReservationService implements IReservationService {
 		// buscar el boleto y que sea el mismo usuario
 		// if true then guardar else retornar error
 		reserveDto.vueloReserva.forEach(value => {
-			const reservationModel = new ReservationBuilder(reserveDto.id)
+			const reservationModel = new ReservationBuilder()
 				.setActivo(reserveDto.activo)
 				.setReservationNroReserva(reserveDto.nroReserva)
 				.setIdVuelo(reserveDto.idVuelo)
