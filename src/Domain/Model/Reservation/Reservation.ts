@@ -52,7 +52,7 @@ export class Reservation extends AggregateRoot<string> {
 	get domainEvents(): Array<any> {
 		return this._domainEvents;
 	}
-	consolidateCheckIn() {
+	consolidateReservation() {
 		this.AddDomainEvent(new CheckInPassed(this.id));
 	}
 }

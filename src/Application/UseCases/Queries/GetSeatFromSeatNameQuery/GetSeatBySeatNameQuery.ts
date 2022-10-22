@@ -14,7 +14,7 @@ export class GetSeatBySeatNameQuery implements IQuery<Seat> {
 
 	public execute = async () => {
 		const queryFactory = new SeatByNameQueryHandlerFactory(this.seatService);
-		const queryName = 'GetRouteByRouteName';
+		const queryName = 'GetSeatBySeatName';
 
 		const config = {
 			queryName,

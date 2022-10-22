@@ -11,7 +11,7 @@ import { OnEvent } from "@nestjs/event-emitter";
 @Controller('checkIn')
 export class CheckinController {
 	constructor(private readonly createCheckInCommandFactory: CreateCommandFactory<any>,
-	            private readonly createReservationCommandFactory: CreateReservationCommandFactory<any>,
+	            private readonly createReservationCommandFactory: CreateReservationCommandFactory,
 	            private readonly rabbitMQService: RabbitMQService) {
 		rabbitMQService.rabbitMQStuff(ReserveDto, "venta-registrada");
 	}

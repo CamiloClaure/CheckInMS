@@ -13,6 +13,10 @@ const commandConfig = {
 	commandName: 'CreateCheckInCommand',
 	args: { checkInDto },
 };
+const commandConfigWrong = {
+	commandName: 'CreateCheckInCommandWrong',
+	args: { checkInDto },
+};
 const checkInService = createMock<CheckInService>();
 checkInService.createCheckIn = (param) => {
 	return Promise.resolve('11');
@@ -24,5 +28,11 @@ describe('Creates a checkIn', () => {
 	test('Should be a createFlightCommand', () => {
 		const command = createFlightCommandFactory.makeCommand(commandConfig);
 		expect(command).toBeInstanceOf(CreateCheckInCommand);
+	});
+	test('Should be throw error', () => {
+		const t = () => {
+			createFlightCommandFactory.makeCommand(commandConfigWrong);
+		}
+		expect(t).toThrow("Command not found!");
 	});
 });

@@ -1,5 +1,3 @@
-import { CheckIn } from '../Model/CheckIn/CheckIn';
-import { DateValue } from '../../SharedKernel/ValueObjects/DateValue';
 import { Seat } from '../Model/Seat/Seat';
 import { NameValue } from '../../SharedKernel/ValueObjects/NameValue';
 export class SeatBuilder {

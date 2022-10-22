@@ -1,4 +1,4 @@
-import { DataSource, getManager } from "typeorm";
+import { DataSource } from "typeorm";
 import { ISeatRepository } from '../../../Domain/Repositories/ISeatRepository';
 import { Seat } from '../../../Domain/Model/Seat/Seat';
 import { Injectable } from '@nestjs/common';
@@ -12,13 +12,11 @@ export class SeatRepository implements ISeatRepository {
 	}
 
 	FindByIdAsync(id: any): Promise<any> {
-		return getManager().getRepository('Seat').findOne({
-			where: { id },
-		});
+		return this.dataSource.getRepository('Seat').findOne({where: { id },});
 	}
 	FindByNameAsync(name: any): Promise<any> {
 
-		return getManager().getRepository('Seat').findOne({where: {
+		return this.dataSource.getRepository('Seat').findOne({where: {
 			name: name,
 		}});
 	}

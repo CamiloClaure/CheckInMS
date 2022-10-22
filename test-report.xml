@@ -1,61 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Application\UseCases\Command\CRUDHandler\CreateCheckInHandler.test.ts">
-    <testCase name="Creates a checkIn Should be a createFlightHandler" duration="2"/>
-    <testCase name="Creates a checkIn Should execute createFlight" duration="2"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Domain\Event\FlightCodeGenerated.test.ts">
-    <testCase name="Creating a FlightCodeGenerated should create FlightCodeGenerated" duration="2"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\SharedKernel\Core\Exceptions\BusinessRuleValidationException.test.ts">
-    <testCase name="Testing BusinessRule Validation Should throw message Object cannot be null" duration="1"/>
-    <testCase name="Testing BusinessRule Validation Should throw message Object cannot be null" duration="0"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Application\Dto\CheckInDto.test.ts">
-    <testCase name="Creating a FlightDto should create FlightDto" duration="1"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Application\Dto\SeatDto.test.ts">
-    <testCase name="Creating a SeatDto should create SeatDto" duration="2"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Application\UseCases\Queries\GetSeatBySeatName.test.ts">
-    <testCase name="Gets a Seat Should be a createFlightCommand" duration="3"/>
-    <testCase name="Gets a Seat Should return an error" duration="13"/>
-    <testCase name="Gets a Seat Should get a seat" duration="1"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Domain\Model\CheckIn.test.ts">
-    <testCase name="Creating a FlightCodeGenerated should create FlightCodeGenerated" duration="4"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Domain\Model\Airport.test.ts">
-    <testCase name="Creating a FlightCodeGenerated should create FlightCodeGenerated" duration="3"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Application\UseCases\Command\CreateCheckInCommand\CreateCheckInCommand.test.ts">
-    <testCase name="Creates a checkIn Should be a createFlightCommand" duration="2"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Application\UseCases\Queries\GetSeatBySeatNameQuery.test.ts">
-    <testCase name="Gets a Seat Should be a createFlightCommand" duration="2"/>
-    <testCase name="Gets a Seat Should return an error" duration="10"/>
-    <testCase name="Gets a Seat Should get a seat" duration="1"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Application\Services\SeatService.test.ts">
-    <testCase name="Seat Service Gets a seat based on its name" duration="3"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Infrastructure\Repository\FlightRepository.test.ts">
-    <testCase name="CheckIn Service Creates a checkIn" duration="9"/>
-    <testCase name="CheckIn Service Removes a checkIn" duration="3"/>
-    <testCase name="CheckIn Service Finds a checkIn" duration="1"/>
-    <testCase name="CheckIn Service Updates a checkIn" duration="1"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Infrastructure\Repository\SeatRepository.test.ts">
-    <testCase name="CheckIn Service Creates a checkIn" duration="11"/>
-    <testCase name="CheckIn Service Removes a checkIn" duration="1"/>
-    <testCase name="CheckIn Service Updates a checkIn" duration="3"/>
-    <testCase name="CheckIn Service Updates a checkIn" duration="0"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\Application\Services\CheckInService.test.ts">
-    <testCase name="CheckIn Service Creates a checkIn" duration="3"/>
-    <testCase name="CheckIn Service Creates a checkIn" duration="1"/>
-  </file>
-  <file path="D:\Freelance\Postgrado\AereolineaMicroService\RouteMS\src\tests\WebApi\Controllers\checkIn.controller.test.ts">
-    <testCase name="CheckinController does something" duration="30"/>
+  <file path="D:\Freelance\Postgrado\AereolineaMicroService\CheckInMS\src\tests\Infrastructure\Repository\ReservationRepository.test.ts">
+    <testCase name="reservation Service Creates a reservation" duration="1"/>
+    <testCase name="reservation Service Removes a reservation" duration="0"/>
+    <testCase name="reservation Service Updates a reservation" duration="0"/>
   </file>
 </testExecutions>
