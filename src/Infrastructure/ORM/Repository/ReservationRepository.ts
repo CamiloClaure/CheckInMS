@@ -8,7 +8,7 @@ import { IReservationRepository } from "../../../Domain/Repositories/IReservatio
 
 @Injectable()
 export class ReservationRepository implements IReservationRepository {
-	constructor(private dataSource: DataSource) {
+	constructor(private dataSource: DataSource | any) {
 	}
 	CreateAsync(obj: any): Promise<any> {
 		return Promise.resolve(undefined);

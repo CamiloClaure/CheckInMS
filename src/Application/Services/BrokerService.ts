@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Injectable } from '@nestjs/common';
 import * as amqplib from "amqplib";
 import { Replies } from "amqplib";

@@ -9,11 +9,11 @@ const checkInDto = new SeatDto();
 checkInDto.id = '11';
 checkInDto.code = 'CBBA';
 const commandConfig = {
-	queryName: 'GetRouteByRouteName',
+	queryName: 'GetSeatBySeatName',
 	args: { checkInDto },
 };
 const commandConfigWrong = {
-	queryName: 'GetRouteByRouteNameWrong',
+	queryName: 'GetSeatBySeatNameWrong',
 	args: { checkInDto },
 };
 const seatService = createMock<SeatService>();

@@ -5,7 +5,7 @@ import { CRUDCommandFactory } from "../CRUDCommandHandler/CRUDCommandFactory";
 import { ReservationService } from "../../../Services/ReservationService";
 
 @Injectable()
-export class CreateReservationCommandFactory<ICommandFactory> {
+export class CreateReservationCommandFactory {
 	private readonly reservationService: ReservationService;
 	constructor(reservationService: ReservationService) {
 		this.reservationService = reservationService;
