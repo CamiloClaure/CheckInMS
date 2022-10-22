@@ -22,9 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: yarn install --frozen-lockfile
-    - run: yarn build
-    - run: yarn test --coverage
+    - run: npm install --frozen-lockfile
+    - run: npm run build
+    - run: npm run test --coverage
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
