@@ -6,7 +6,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class CheckInRepository implements ICheckInRepository {
-	constructor(private dataSource: DataSource | any) {
+	constructor(private dataSource: DataSource) {
 	}
 	CreateAsync(obj: any): Promise<any> {
 		return Promise.resolve(undefined);

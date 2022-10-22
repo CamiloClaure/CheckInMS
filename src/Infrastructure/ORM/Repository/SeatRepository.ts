@@ -5,7 +5,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class SeatRepository implements ISeatRepository {
-	constructor(private dataSource: DataSource | any) {
+	constructor(private dataSource: DataSource) {
 	}
 	CreateAsync(obj: any): Promise<any> {
 		return Promise.resolve(undefined);

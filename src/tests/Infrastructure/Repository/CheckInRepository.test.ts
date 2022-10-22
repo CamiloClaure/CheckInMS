@@ -21,6 +21,7 @@ export const dataSourceMockFactory: () => MockType<DataSource> = jest.fn(() => (
 export type MockType<T> = {
 	[P in keyof T]?: jest.Mock<{}>;
 };
+// @ts-ignore
 const checkInRepository = new CheckInRepository(dataSourceMockFactory);
 describe('CheckIn Service', () => {
 	test('Creates a checkIn', async () => {

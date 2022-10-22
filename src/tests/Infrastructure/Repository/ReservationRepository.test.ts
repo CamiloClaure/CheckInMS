@@ -24,6 +24,7 @@ export const dataSourceMockFactory: () => MockType<DataSource> = jest.fn(() => (
 export type MockType<T> = {
 	[P in keyof T]?: jest.Mock<{}>;
 };
+// @ts-ignore
 const reservationRepository = new ReservationRepository(dataSourceMockFactory);
 describe('reservation Service', () => {
 	test('Creates a reservation', async () => {
