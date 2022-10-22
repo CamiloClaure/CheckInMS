@@ -1,4 +1,4 @@
-import { SeatRepository } from '../../../Infrastructure/ORM/Repository/seatRepository';
+import { SeatRepository } from '../../../Infrastructure/ORM/Repository/SeatRepository';
 import { DataSource } from "typeorm";
 import { Seat } from "../../../Domain/Model/Seat/Seat";
 
